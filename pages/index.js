@@ -1,8 +1,7 @@
 import Head from 'next/head'
 import Login from '../components/Login'
 import { useMoralis } from "react-moralis";
-
-import Navbar from '../components/Navbar';
+import Navigation from '../components/Navigation';
  
 export default function Home() {
   const {isAuthenticated,logout} = useMoralis();
@@ -10,17 +9,12 @@ export default function Home() {
   // const isAuthenticated = true;
   if(!isAuthenticated) {return <Login />}
   return (
-    <div className="h-screen">
+    <div className="h-screen bg-black">
       <Head>
-        <title>metaverse challenge</title>
+        <title>Lucid Crusade</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <Main> */}
-      {/* <Navbar/> */}
-   <h1>welcome</h1>
-   <button link="/Balance" >transaction</button><br/>
-   <button onClick={logout}>Logout</button>
-      {/* </Main> */}
+      <Navigation />
     </div>
   )
 }
