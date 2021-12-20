@@ -1,13 +1,13 @@
 import Head from 'next/head'
 import Login from '../components/Login'
 import { useMoralis } from "react-moralis";
-import { Main } from 'next/document';
-import Navbar from '../components/NavBar';
 
+import Navbar from '../components/Navbar';
+ 
 export default function Home() {
-  // const {isAuthenticated,logout} = useMoralis();
-  const {logout} = useMoralis();
-  const isAuthenticated = true;
+  const {isAuthenticated,logout} = useMoralis();
+  // const {logout} = useMoralis();
+  // const isAuthenticated = true;
   if(!isAuthenticated) {return <Login />}
   return (
     <div className="h-screen">
@@ -16,7 +16,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* <Main> */}
-      <Navbar/>
+      {/* <Navbar/> */}
+   <h1>welcome</h1>
+   <button link="/Balance" >transaction</button><br/>
+   <button onClick={logout}>Logout</button>
       {/* </Main> */}
     </div>
   )
