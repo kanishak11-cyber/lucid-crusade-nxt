@@ -2,6 +2,8 @@ import Head from 'next/head'
 import Login from '../components/Login'
 import { useMoralis } from "react-moralis";
 import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
+// import Slideshow from '../components/Slideshow';
  
 export default function Home() {
   const {isAuthenticated,logout} = useMoralis();
@@ -15,6 +17,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navigation />
+      {/* <Slideshow/> */}
+      <Footer/>
     </div>
   )
 }
